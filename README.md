@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next.js Expense Tracker
+
+A **simple expense tracker** built with **Next.js 15.1.7** and **Supabase**. Users can sign up, log in, create groups, add expenses, and persist data locally – **no row-level security** is used.
+
+[![View on GitHub](https://img.shields.io/badge/View%20On-GitHub-black.svg?logo=github)](https://github.com/AhmadAffan337/group-expense-tracker)
+
+## AI-Assisted Development
+
+During key moments – including **bug fixing**, **decision making**, and **conflict resolution** – **AI insights** were used to streamline the development process. This helped ensure rapid prototyping, improved attention to detail, and robust solutions.
 
 ## Getting Started
 
-First, run the development server:
+1. **Clone & Install**  
+   ```bash
+   git clone https://github.com/AhmadAffan337/group-expense-tracker.git
+   cd group-expense-tracker
+   npm install
+npm run dev
+
+---
+
+### `.env.example`
+
+Below is a sample `.env.example` file. Copy this to `.env.local` in your project root and insert your own Supabase credentials:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# .env.example
+NEXT_PUBLIC_SUPABASE_URL=https://muxdesgknsaialwnxnad.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im11eGRlc2drbnNhaWFsd254bmFkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDA2MDkwNjEsImV4cCI6MjA1NjE4NTA2MX0.O2OoNlUQPhE7gYQEyJOkbvMuP86XDI1J8MZkSLaWZL4
+group-expense-tracker/
+├─ app/
+│   ├─ page.tsx                # Home page
+│   ├─ login/
+│   │   └─ page.tsx            # Login page
+│   ├─ signup/
+│   │   └─ page.tsx            # Sign-up page
+│   ├─ manage-groups/
+│   │   ├─ page.tsx            # Main ManageGroupsPage (listing, creating groups, etc.)
+│   │   └─ [groupId]/
+│   │       └─ page.tsx        # GroupDetailsPage (details/expenses for a single group)
+│   ├─ profile/
+│   │   └─ page.tsx            # Protected profile page
+│   └─ middleware.ts           # Middleware for auth checks (e.g., /profile)
+├─ hooks/
+│   ├─ useGroups.ts            # CRUD hooks for groups
+│   └─ useExpenses.ts          # CRUD hooks for expenses
+├─ lib/
+│   └─ supabaseClient.ts       # Supabase client setup
+├─ .env.example                # Example environment variables
+├─ .env.local                  # Your actual environment variables (ignored by Git)
+├─ package.json
+├─ README.md
+└─ ... (other config files like tsconfig.json, tailwind.config.js, etc.)
+ This project was partly shaped by AI-driven insights for bug fixing, conflict resolution, critical decision making, and grooming complex ideas. Human oversight and testing ensured final solutions remained robust and aligned with project goals.
